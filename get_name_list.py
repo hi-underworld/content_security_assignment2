@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import json
 
 # 读取文本文件
-with open('sports_names.txt', 'r') as file:
+with open('sports_names.txt', 'r', encoding="utf-8") as file:
     sports = json.load(file)
 
 sport_team_data = {}
@@ -44,5 +44,5 @@ for sport in sports:
 
 print(sport_team_data)
 # 存储到文件
-with open('sports_team_names.txt', 'w') as file:
-    json.dump(sports, file)
+with open('sports_team_names.txt', 'w', encoding="utf-8") as file:
+    json.dump(sport_team_data, file, ensure_ascii=False, indent=4)

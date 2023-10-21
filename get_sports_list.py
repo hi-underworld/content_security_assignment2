@@ -23,7 +23,8 @@ if response.status_code == 200:
 
     # 存储到文件
     with open('sports_names.txt', 'w', encoding='utf-8') as file:
-        json.dump(sports, file)
+        json.dump(sports, file, ensure_ascii=False, indent=4)
+
 
 else:
     print("Failed to retrieve the page. Status code:", response.status_code)
