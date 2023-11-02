@@ -73,6 +73,9 @@ for sport in sports:
             leaf_url = logo_name_block.get('href')
             print(leaf_url)
             # 发送HTTP GET请求获取网页内容
+            if leaf_url == None:
+                continue
+            
             driver.get(leaf_url)
             
             # 等待一段时间，以确保页面加载完成（可以根据需要调整等待时间）
